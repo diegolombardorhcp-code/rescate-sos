@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Copiloto SOS - Crisis Respiratoria</title>
+  <title>Copiloto SOS - Crisis Respiratoria | Guías GOLD 2026</title>
   <style>
     :root {
       --bg: #F8FAFC;
@@ -26,38 +26,271 @@
       --primary: #38BDF8;
       --primary-hover: #0284C7;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    body { background-color: var(--bg); color: var(--text); padding-bottom: 40px; transition: background 0.2s, color 0.2s; }
-    header { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; background: var(--card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
-    .logo { font-size: 1.1rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 8px; }
-    .header-actions { display: flex; gap: 10px; align-items: center; }
-    button.btn-ctrl { background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
-    .container { max-width: 520px; margin: 0 auto; padding: 16px; display: flex; flex-direction: column; gap: 16px; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
-    .alert-banner { background: #FEF2F2; border: 1px solid #FCA5A5; color: #991B1B; border-radius: 12px; padding: 12px; font-size: 0.9rem; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
-    body.dark-mode .alert-banner { background: #450A0A; border-color: #7F1D1D; color: #FCA5A5; }
-    .btn-call { background: var(--danger); color: white; padding: 8px 14px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.85rem; }
-    h2 { font-size: 1.15rem; margin-bottom: 8px; color: var(--text); }
-    p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; }
-    .btn-action { width: 100%; padding: 16px; border: none; border-radius: 14px; font-size: 1.1rem; font-weight: 800; color: white; background: var(--primary); cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; }
-    .btn-action:hover { background: var(--primary-hover); }
-    .timer-circle { width: 150px; height: 150px; border-radius: 50%; border: 8px solid var(--border); border-top-color: var(--primary); margin: 20px auto; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 2.2rem; font-weight: 800; }
-    .status-text { text-align: center; font-weight: 700; font-size: 1.1rem; margin-bottom: 6px; }
-    .steps-list { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
-    .step-item { display: flex; gap: 12px; align-items: flex-start; padding: 10px; background: var(--bg); border-radius: 10px; }
-    .step-num { background: var(--primary); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.75rem; flex-shrink: 0; }
-    .svg-box { width: 100%; height: 140px; background: var(--bg); border-radius: 12px; display: flex; justify-content: center; align-items: center; margin-top: 12px; }
-    .selector-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 10px; }
-    .btn-select { padding: 12px 6px; border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: 10px; font-weight: 700; font-size: 0.8rem; cursor: pointer; text-align: center; }
-    .btn-select.active-green { border-color: var(--success); background: #ECFDF5; color: #065F46; }
-    .btn-select.active-amber { border-color: var(--warning); background: #FFFBEB; color: #92400E; }
-    .btn-select.active-red { border-color: var(--danger); background: #FEF2F2; color: #991B1B; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      padding-bottom: 40px;
+      transition: background 0.2s, color 0.2s;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-img {
+      width: 38px;
+      height: 38px;
+    }
+    .logo-text {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--text);
+      letter-spacing: 0.05em;
+    }
+    .logo-text span {
+      color: var(--danger);
+    }
+    .header-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    button.btn-ctrl {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .container {
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .evidence-badge {
+      background: #E0F2FE;
+      border: 1px solid #BAE6FD;
+      color: #0369A1;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    body.dark-mode .evidence-badge {
+      background: #082F49;
+      border-color: #0369A1;
+      color: #7DD3FC;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+    }
+    .alert-banner {
+      background: #FEF2F2;
+      border: 1px solid #FCA5A5;
+      color: #991B1B;
+      border-radius: 14px;
+      padding: 14px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    body.dark-mode .alert-banner {
+      background: #450A0A;
+      border-color: #7F1D1D;
+      color: #FCA5A5;
+    }
+    .btn-call {
+      background: var(--danger);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.85rem;
+    }
+    h2 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+    .selector-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .btn-select {
+      padding: 12px 6px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 0.8rem;
+      cursor: pointer;
+      text-align: center;
+    }
+    .btn-select.active-green {
+      border-color: var(--success);
+      background: #ECFDF5;
+      color: #065F46;
+    }
+    .btn-select.active-amber {
+      border-color: var(--warning);
+      background: #FFFBEB;
+      color: #92400E;
+    }
+    .btn-select.active-red {
+      border-color: var(--danger);
+      background: #FEF2F2;
+      color: #991B1B;
+    }
+    .svg-box {
+      width: 100%;
+      height: 150px;
+      background: var(--bg);
+      border-radius: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 14px 0;
+      overflow: hidden;
+    }
+    .timer-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 8px solid var(--border);
+      border-top-color: var(--primary);
+      margin: 15px auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.2rem;
+      font-weight: 900;
+    }
+    .status-text {
+      text-align: center;
+      font-weight: 800;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+    .btn-action {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 14px;
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: white;
+      background: var(--primary);
+      cursor: pointer;
+    }
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .step-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 12px;
+      background: var(--bg);
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .step-num {
+      background: var(--primary);
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+      line-height: 1.5;
+    }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo">🫁 <span id="appTitle">Copiloto SOS</span></div>
+    <div class="logo-container">
+      <!-- Logo Vectorial: Árbol en forma de corazón con figura humana azul -->
+      <svg class="logo-img" viewBox="0 0 120 120" aria-label="Logo Método Pulmón Libre">
+        <circle cx="60" cy="50" r="6" fill="#0284C7" />
+        <path d="M 52 56 C 45 52, 38 52, 32 58 C 30 60, 32 62, 36 60 C 44 57, 50 60, 56 66 L 56 86 C 56 94, 62 108, 68 114 C 64 104, 64 92, 64 84 L 64 66 C 70 60, 76 57, 84 60 C 88 62, 90 60, 88 58 C 82 52, 75 52, 68 56 Z" fill="#0284C7" />
+        <ellipse cx="36" cy="38" rx="8" ry="4" transform="rotate(-35 36 38)" fill="#22C55E" />
+        <ellipse cx="48" cy="28" rx="9" ry="5" transform="rotate(-20 48 28)" fill="#16A34A" />
+        <ellipse cx="26" cy="48" rx="7" ry="4" transform="rotate(-55 26 48)" fill="#15803D" />
+        <ellipse cx="42" cy="46" rx="8" ry="4" transform="rotate(-15 42 46)" fill="#4ADE80" />
+        <ellipse cx="28" cy="62" rx="7" ry="4" transform="rotate(-70 28 62)" fill="#16A34A" />
+        <ellipse cx="36" cy="72" rx="6" ry="3.5" transform="rotate(-60 36 72)" fill="#22C55E" />
+        <ellipse cx="44" cy="80" rx="6" ry="3" transform="rotate(-40 44 80)" fill="#15803D" />
+        <ellipse cx="50" cy="88" rx="5" ry="2.5" transform="rotate(-25 50 88)" fill="#4ADE80" />
+        <ellipse cx="84" cy="38" rx="8" ry="4" transform="rotate(35 84 38)" fill="#22C55E" />
+        <ellipse cx="72" cy="28" rx="9" ry="5" transform="rotate(20 72 28)" fill="#16A34A" />
+        <ellipse cx="94" cy="48" rx="7" ry="4" transform="rotate(55 94 48)" fill="#15803D" />
+        <ellipse cx="78" cy="46" rx="8" ry="4" transform="rotate(15 78 46)" fill="#4ADE80" />
+        <ellipse cx="92" cy="62" rx="7" ry="4" transform="rotate(70 92 62)" fill="#16A34A" />
+        <ellipse cx="84" cy="72" rx="6" ry="3.5" transform="rotate(60 84 72)" fill="#22C55E" />
+        <ellipse cx="76" cy="80" rx="6" ry="3" transform="rotate(40 76 80)" fill="#15803D" />
+        <ellipse cx="70" cy="88" rx="5" ry="2.5" transform="rotate(25 70 88)" fill="#4ADE80" />
+        <ellipse cx="60" cy="24" rx="7" ry="3.5" transform="rotate(0 60 24)" fill="#22C55E" />
+        <ellipse cx="54" cy="36" rx="6" ry="3" transform="rotate(-10 54 36)" fill="#16A34A" />
+        <ellipse cx="66" cy="36" rx="6" ry="3" transform="rotate(10 66 36)" fill="#4ADE80" />
+      </svg>
+      <div class="logo-text">COPILOTO <span>SOS</span></div>
+    </div>
     <div class="header-actions">
       <button class="btn-ctrl" onclick="toggleLang()" id="btnLang">PT</button>
       <button class="btn-ctrl" onclick="toggleTheme()" id="btnTheme">🌙</button>
@@ -65,12 +298,17 @@
   </header>
 
   <div class="container">
+    <div class="evidence-badge">
+      <span id="txtEvidence">RESPALDO TÉCNICO · GUÍAS INTERNACIONALES GOLD 2026</span>
+      <span>NIVEL A</span>
+    </div>
+
     <div class="alert-banner">
       <span id="txtEmerg">Emergencias Respiratorias:</span>
       <a href="tel:123" class="btn-call" id="btnCall">📞 123 / 192</a>
     </div>
 
-    <!-- Módulo 1: Semáforo Clínico -->
+    <!-- Módulo 1: Triaje Clínico -->
     <div class="card">
       <h2 id="txtTriageTitle">1. Evaluación Rápida (Triaje)</h2>
       <p id="txtTriageSub">Selecciona el estado actual del paciente para recibir instrucciones precisas:</p>
@@ -79,52 +317,56 @@
         <button class="btn-select" onclick="setTriage('amber')" id="btnAmber">Dificultad<br>(SpO2 90-93%)</button>
         <button class="btn-select" onclick="setTriage('red')" id="btnRed">Peligro<br>(SpO2 < 90%)</button>
       </div>
-      <div id="triageResult" style="margin-top: 14px; font-weight: 600; font-size: 0.9rem;"></div>
+      <div id="triageResult" style="margin-top: 14px; font-weight: 700; font-size: 0.9rem;"></div>
     </div>
 
-    <!-- Módulo 2: Protocolo con Inhalocámara y Temporizador -->
+    <!-- Módulo 2: Protocolo con Inhalocámara -->
     <div class="card">
       <h2 id="txtRescueTitle">2. Protocolo de Rescate (Inhalocámara)</h2>
       <p id="txtDrugDesc">Fármaco de rescate: <b>Salbutamol (Aerolin)</b> o <b>Bromuro de Ipratropio (Atrovent)</b>.</p>
-      
       <div class="svg-box">
         <svg viewBox="0 0 280 120" width="100%" height="100%">
-          <rect x="30" y="35" width="120" height="40" rx="8" fill="#BAE6FD" stroke="#0284C7" stroke-width="2"/>
-          <rect x="20" y="45" width="20" height="20" rx="4" fill="#0284C7"/>
-          <path d="M 150 40 L 180 30 L 180 80 L 150 70 Z" fill="#93C5FD"/>
+          <rect x="30" y="35" width="130" height="42" rx="10" fill="#BAE6FD" stroke="#0284C7" stroke-width="2"/>
+          <line x1="60" y1="42" x2="60" y2="52" stroke="#0284C7" stroke-width="2"/>
+          <line x1="90" y1="42" x2="90" y2="52" stroke="#0284C7" stroke-width="2"/>
+          <line x1="120" y1="42" x2="120" y2="52" stroke="#0284C7" stroke-width="2"/>
+          <rect x="18" y="44" width="22" height="24" rx="4" fill="#0284C7"/>
+          <path d="M 160 40 L 195 28 L 195 84 L 160 72 Z" fill="#93C5FD"/>
           <line x1="90" y1="10" x2="90" y2="30" stroke="#EF4444" stroke-width="2"/>
-          <text x="95" y="20" fill="#EF4444" font-size="11" font-weight="700">90° Horizontal</text>
-          <line x1="220" y1="55" x2="185" y2="55" stroke="#EF4444" stroke-width="2"/>
-          <text x="195" y="45" fill="#EF4444" font-size="11" font-weight="700">Sello hermético</text>
+          <text x="95" y="20" fill="#EF4444" font-size="11" font-weight="800">90° Horizontal</text>
+          <line x1="230" y1="56" x2="200" y2="56" stroke="#EF4444" stroke-width="2"/>
+          <text x="205" y="46" fill="#EF4444" font-size="11" font-weight="800">Sello facial</text>
         </svg>
       </div>
-
-      <div class="timer-circle" id="timerDisplay">10s</div>
+      <div class="timer-circle" id="timerDisplay">6 c</div>
       <div class="status-text" id="timerStatus">Listo para iniciar</div>
-      <button class="btn-action" onclick="startRescueCycle()" id="btnStartRescue">Disparar Puf y Cronometrar</button>
-
+      <button class="btn-action" onclick="startRescueCycle()" id="btnStartRescue">Disparar 1 Puf y Contar Respiraciones</button>
       <div class="steps-list">
-        <div class="step-item"><div class="step-num">1</div><div id="step1">Agitar el inhalador 5 segundos y acoplar a la aerocámara.</div></div>
-        <div class="step-item"><div class="step-num">2</div><div id="step2">Exhalar todo el aire, sellar labios/máscara sin fugas.</div></div>
-        <div class="step-item"><div class="step-num">3</div><div id="step3">Pulsar 1 solo disparo e inhalar lento sosteniendo 10 s.</div></div>
+        <div class="step-item"><div class="step-num">1</div><div id="step1">Agitar el inhalador 5 segundos y acoplar a la aerocámara con válvula.</div></div>
+        <div class="step-item"><div class="step-num">2</div><div id="step2">Sellar máscara sobre nariz y boca. Mantener al paciente erguido con codos apoyados.</div></div>
+        <div class="step-item"><div class="step-num">3</div><div id="step3">Pulsar 1 solo disparo. ¡No aguantar el aire! Respirar normal y tranquilo 5 a 6 veces.</div></div>
       </div>
     </div>
 
-    <!-- Módulo 3: Postura y Drenador -->
+    <!-- Módulo 3: Biomecánica -->
     <div class="card">
       <h2 id="txtPosTitle">3. Biomecánica y Drenaje</h2>
-      <p id="txtPosSub">Libera el diafragma inclinando al paciente hacia adelante con apoyo firme en los codos.</p>
+      <p id="txtPosSub">Libera el diafragma inclinando al paciente hacia adelante con apoyo firme en los codos sobre una mesa.</p>
       <div class="svg-box">
         <svg viewBox="0 0 280 120" width="100%" height="100%">
-          <circle cx="90" cy="35" r="14" fill="#CBD5E1"/>
-          <path d="M 90 50 L 120 75 L 140 100" stroke="#0284C7" stroke-width="6" fill="none" stroke-linecap="round"/>
-          <path d="M 110 65 L 140 65" stroke="#64748B" stroke-width="5" fill="none" stroke-linecap="round"/>
-          <line x1="130" y1="75" x2="180" y2="75" stroke="#0F172A" stroke-width="4"/>
-          <line x1="150" y1="75" x2="150" y2="110" stroke="#0F172A" stroke-width="3"/>
-          <text x="160" y="45" fill="#EF4444" font-size="11" font-weight="700">← Codos apoyados</text>
+          <circle cx="85" cy="35" r="14" fill="#CBD5E1"/>
+          <path d="M 85 50 L 115 75 L 135 100" stroke="#0284C7" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M 105 65 L 145 65" stroke="#64748B" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <line x1="130" y1="75" x2="190" y2="75" stroke="#0F172A" stroke-width="4"/>
+          <line x1="160" y1="75" x2="160" y2="110" stroke="#0F172A" stroke-width="3"/>
+          <text x="155" y="45" fill="#EF4444" font-size="11" font-weight="800">← Codos en mesa (Trípode)</text>
         </svg>
       </div>
     </div>
+
+    <footer>
+      <p id="txtDisclaimer">COPILOTO SOS es una herramienta educativa y de organización. No diagnostica ni reemplaza los servicios de urgencias. Las dosis y tiempos siguen el plan individualizado prescrito por tu profesional. Referencia científica: Guías Internacionales GOLD 2026.</p>
+    </footer>
   </div>
 
   <script>
@@ -154,32 +396,36 @@
 
     const dict = {
       ES: {
-        title: "Copiloto SOS",
+        title: "COPILOTO SOS",
+        evidence: "RESPALDO TÉCNICO · GUÍAS INTERNACIONALES GOLD 2026",
         emerg: "Emergencias Respiratorias:",
         triageTitle: "1. Evaluación Rápida (Triaje)",
         triageSub: "Selecciona el estado actual del paciente para recibir instrucciones precisas:",
         rescueTitle: "2. Protocolo de Rescate (Inhalocámara)",
         drugDesc: "Fármaco de rescate: <b>Salbutamol (Aerolin)</b> o <b>Bromuro de Ipratropio (Atrovent)</b>.",
-        startBtn: "Disparar Puf y Cronometrar",
-        step1: "Agitar el inhalador 5 segundos y acoplar a la aerocámara.",
-        step2: "Exhalar todo el aire, sellar labios/máscara sin fugas.",
-        step3: "Pulsar 1 solo disparo e inhalar lento sosteniendo 10 s.",
+        startBtn: "Disparar 1 Puf y Contar Respiraciones",
+        step1: "Agitar el inhalador 5 segundos y acoplar a la aerocámara con válvula.",
+        step2: "Sellar máscara sobre nariz y boca. Mantener al paciente erguido con codos apoyados.",
+        step3: "Pulsar 1 solo disparo. ¡No aguantar el aire! Respirar normal y tranquilo 5 a 6 veces.",
         posTitle: "3. Biomecánica y Drenaje",
-        posSub: "Libera el diafragma inclinando al paciente hacia adelante con apoyo firme en los codos."
+        posSub: "Libera el diafragma inclinando al paciente hacia adelante con apoyo firme en los codos sobre una mesa.",
+        disclaimer: "COPILOTO SOS es una herramienta educativa y de organización. No diagnostica ni reemplaza los servicios de urgencias. Las dosis y tiempos siguen el plan individualizado prescrito por tu profesional. Referencia científica: Guías Internacionales GOLD 2026."
       },
       PT: {
-        title: "Copiloto SOS",
+        title: "COPILOTO SOS",
+        evidence: "SUPORTE TÉCNICO · DIRETRIZES INTERNACIONAIS GOLD 2026",
         emerg: "Emergências Respiratórias:",
         triageTitle: "1. Avaliação Rápida (Triagem)",
         triageSub: "Selecione o estado atual do paciente para instruções imediatas:",
         rescueTitle: "2. Protocolo de Resgate (Espaçador)",
         drugDesc: "Medicamento de alívio: <b>Aerolin (Salbutamol)</b> ou <b>Atrovent (Ipratrópio)</b>.",
-        startBtn: "Disparar Puff e Cronometrar",
-        step1: "Agite o inalador por 5 segundos e encaixe no espaçador.",
-        step2: "Solte todo o ar, posicione a máscara/bocal sem vazamentos.",
-        step3: "Pressione 1 jato e puxe o ar devagar, segurando 10 s.",
+        startBtn: "Disparar 1 Puff e Contar Respirações",
+        step1: "Agite o inalador por 5 segundos e encaixe no espaçador valvulado.",
+        step2: "Posicione a máscara sobre nariz e boca sem vazamentos. Cotovelos apoiados.",
+        step3: "Pressione 1 jato. Não precisa prender o ar! Respire normalmente de 5 a 6 vezes.",
         posTitle: "3. Biomecânica e Drenagem",
-        posSub: "Alivie o diafragma inclinando o tronco à frente apoiando os cotovelos."
+        posSub: "Alivie o diafragma inclinando o tronco à frente com os cotovelos apoiados na mesa.",
+        disclaimer: "COPILOTO SOS é uma ferramenta educativa de suporte. Não diagnostica nem substitui atendimento de urgência. As dosagens seguem a receita do seu médico. Referência científica: Diretrizes GOLD 2026."
       }
     };
 
@@ -187,7 +433,7 @@
       currentLang = currentLang === 'ES' ? 'PT' : 'ES';
       document.getElementById('btnLang').textContent = currentLang === 'ES' ? 'PT' : 'ES';
       const t = dict[currentLang];
-      document.getElementById('appTitle').textContent = t.title;
+      document.getElementById('txtEvidence').textContent = t.evidence;
       document.getElementById('txtEmerg').textContent = t.emerg;
       document.getElementById('txtTriageTitle').textContent = t.triageTitle;
       document.getElementById('txtTriageSub').textContent = t.triageSub;
@@ -199,6 +445,7 @@
       document.getElementById('step3').textContent = t.step3;
       document.getElementById('txtPosTitle').textContent = t.posTitle;
       document.getElementById('txtPosSub').textContent = t.posSub;
+      document.getElementById('txtDisclaimer').textContent = t.disclaimer;
     }
 
     function setTriage(level) {
@@ -209,7 +456,7 @@
         res.innerHTML = "✅ <b>Estable:</b> Mantén la calma, usa respiración con labios fruncidos y vigila la evolución.";
       } else if (level === 'amber') {
         document.getElementById('btnAmber').classList.add('active-amber');
-        res.innerHTML = "⚠️ <b>Alerta:</b> Realiza el ciclo de 2 a 4 pufs con inhalocámara y evalúa en 15 minutos.";
+        res.innerHTML = "⚠️ <b>Alerta (GOLD 2026):</b> Realiza 1 puf con espaciador, respira 6 ciclos y evalúa a los 15 minutos.";
       } else {
         document.getElementById('btnRed').classList.add('active-red');
         res.innerHTML = "🚨 <b>PELIGRO:</b> Aplica 1 puf de rescate continuo y llama a urgencias inmediatamente.";
@@ -223,21 +470,19 @@
       const btn = document.getElementById('btnStartRescue');
       btn.disabled = true;
       btn.style.opacity = '0.5';
-
-      let apnea = 10;
-      status.textContent = currentLang === 'ES' ? "¡Inhala hondo y sostén el aire!" : "Puxe o ar e segure!";
+      let cycles = 6;
+      status.textContent = currentLang === 'ES' ? "Respira normal por la aerocámara (ciclo tidal)" : "Respire normalmente pelo espaçador";
       playBeep(520, 0.2);
-
       const interval = setInterval(() => {
-        apnea--;
-        display.textContent = apnea + "s";
-        if (apnea > 0) playBeep(650, 0.08);
-        if (apnea <= 0) {
+        cycles--;
+        display.textContent = cycles + " c";
+        if (cycles > 0) playBeep(650, 0.08);
+        if (cycles <= 0) {
           clearInterval(interval);
           playBeep(880, 0.3);
           startRestCycle();
         }
-      }, 1000);
+      }, 1800);
     }
 
     function startRestCycle() {
@@ -245,15 +490,14 @@
       const status = document.getElementById('timerStatus');
       const btn = document.getElementById('btnStartRescue');
       let rest = 30;
-      status.textContent = currentLang === 'ES' ? "Descanso entre dosis (espera para el 2° puf)" : "Descanse antes do próximo puff";
-      
+      status.textContent = currentLang === 'ES' ? "Espera entre dosis (30 a 60 s según GOLD 2026)" : "Aguarde antes do próximo puff (30 a 60 s)";
       const restInterval = setInterval(() => {
         rest--;
         display.textContent = rest + "s";
         if (rest <= 0) {
           clearInterval(restInterval);
-          status.textContent = currentLang === 'ES' ? "Listo para el siguiente puf si es necesario" : "Pronto para o próximo puff";
-          display.textContent = "10s";
+          status.textContent = currentLang === 'ES' ? "Listo para el 2° puf si tu plan lo prescribe" : "Pronto para o 2° puff se indicado";
+          display.textContent = "6 c";
           btn.disabled = false;
           btn.style.opacity = '1';
           playBeep(700, 0.25);
